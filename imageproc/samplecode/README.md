@@ -19,3 +19,4 @@ This project uses OpenCV, MatPlotLib, NumPy and TensorFlow to create a few compu
 ### ML (accessibility tools)
 1. Eyeball tracking for moving the cursor
 2. Blinking to click
+3. Lip tracking to type (or switch filters)
