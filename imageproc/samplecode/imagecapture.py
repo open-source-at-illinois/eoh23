@@ -2,7 +2,9 @@
 import cv2
 from filters import blur, heatmap, adaptThreshold, sobelDerivative, contours, img64
 # define a video capture object
+
 vid = cv2.VideoCapture(0)
+
 vid.set(cv2.CAP_PROP_EXPOSURE, -1)
 mode = 'sobelDerivative'
 while(True):
