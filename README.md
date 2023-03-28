@@ -28,3 +28,14 @@ The imageproc and microcontroller teams should work on their own branches and th
 - https://predictabledesigns.com/introduction-to-basic-electronic-circuits/
 
 - https://www.youtube.com/watch?v=uh5aN_Di8J0 (Optional)
+
+
+###Contributors
+ - Members of Open-Source @ Illinois (https://www.opensourceatillinois.com/)
+ - Prakhar 
+ - Pranav
+ - Justin
+ - Rithvik
+ - Karthik
+ - Ahmad
+ - Terrence 
