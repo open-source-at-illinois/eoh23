@@ -2,27 +2,27 @@
 import cv2
 import numpy as np
 
-def nosetracking(frame):
+
+
+def nosetracking(frame, pts, nose_cascade):
+    SPIKE_TOLERANCE = 400
     gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
-    # cascade files used to detect faces and eyes
-    face_cascade = cv2.CascadeClassifier(
-        "dependencies/haarcascade_frontalface_default.xml")
-    # eye_cascade = cv2.CascadeClassifier('../haarcascade_eye.xml')
-    nose_cascade = cv2.CascadeClassifier('dependencies/nose.xml')
-
-    faces = face_cascade.detectMultiScale(gray_frame, 1.3, 5)
-    try:
-        faces = faces[0]
-    except:
-        pass
+    # cascade files used to detect nose
 
     nose = nose_cascade.detectMultiScale(gray_frame, 1.3, 5)
     for (ex, ey, ew, eh) in nose:  # draws a box around the nose
         # cv2.rectangle(canvas, (ex, ey), (ex+ew, ey+eh), (0, 255, 0), 2)
         # cv2.circle(canvas,(ex + ew//2, ey + eh//2),10,(0,0,255), -1)
-        pts = ((ex + ew//2, ey + eh//2))
-    return pts
+        curX = ex + ew//2
+        curY = ey + eh//2
+        if not pts:
+            pts.appendleft((curX, curY))
+            break
+        lastX, lastY = pts[-1]
+        if abs(lastX - curX) < SPIKE_TOLERANCE and abs(lastY - curY) < SPIKE_TOLERANCE:
+            pts.appendleft((curX, curY))
+        break
+    # return pts
 
 
 # VERY HELPFUL RESOURCES:
