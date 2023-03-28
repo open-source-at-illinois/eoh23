@@ -30,7 +30,7 @@ The imageproc and microcontroller teams should work on their own branches and th
 - https://www.youtube.com/watch?v=uh5aN_Di8J0 (Optional)
 
 
-###Contributors
+### Contributors
  - Members of Open-Source @ Illinois (https://www.opensourceatillinois.com/)
  - Prakhar 
  - Pranav
