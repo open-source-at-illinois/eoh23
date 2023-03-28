@@ -17,7 +17,7 @@ pts = deque(maxlen=MAX_BUFFER)
 
 nose_cascade = cv2.CascadeClassifier('dependencies/nose.xml') #pranav's REFACTOR: only done once, no need to keep in while loop
 
-mode = 'nosetracking' #set a mode variable
+mode = 'def' #set a mode variable
 while (True):
     
     ret, frame = vid.read()  # saves the current frame from the video feed
@@ -63,8 +63,21 @@ while (True):
     # the 'q' button is set as the quit button
     else:
         cv2.imshow('frame', frame)
-
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    
+    ### code to switch between different modes
+    key = cv2.waitKey(1)
+    if key == ord('q'):
         break
+    elif key == ord('i'):
+        mode = 'illini_eyes'  
+    elif key == ord('b'):
+        mode = 'easter_ears'
+    elif key == ord('n'):
+        mode = 'nosetracking'
+    elif key == ord('d'):
+        mode = 'def'
+    else:
+        pass
+            
 vid.release()
 cv2.destroyAllWindows()
